@@ -1,0 +1,16 @@
+import{A as e,O as t,St as n,f as r,g as i,l as a,r as o,v as s}from"./runtime-core.esm-bundler-x_4OVm04.js";import{t as c}from"./CodeBlock-Ctj4cAyk.js";var l={class:`reference-page`},u={class:`mapping-table-wrap`},d={class:`mapping-table`},f={class:`content-section`},p={class:`code-compare`},m=s({__name:`MentalModelPage`,setup(s){let m=[[`useState`,`ref / reactive`,`Tracked mutable containers; .value in script for refs.`],[`useMemo`,`computed`,`Dependencies are collected automatically and results are cached.`],[`useEffect`,`watch / lifecycle`,`Choose an explicit source or a lifecycle moment.`],[`Custom Hook`,`Composable`,`Reusable stateful functions without hook call-order rules.`],[`Callback prop`,`defineEmits`,`Child emits intent; parent remains the state owner.`],[`children / render prop`,`slots / scoped slots`,`Parent supplies content; child owns layout.`],[`React Context`,`provide / inject`,`Subtree dependencies, ideally with typed Symbol keys.`],[`Redux / Zustand`,`Pinia`,`Vue-native stores with refs, computed getters, and actions.`],[`React Router`,`Vue Router`,`Route records, RouterView, RouterLink, and composables.`],[`useRef`,`template ref`,`Imperative DOM or component access after mount.`]],h=[{title:`State`,react:`const [count, setCount] = useState(0)
+setCount(value => value + 1)`,vue:`const count = ref(0)
+count.value++
+// template: {{ count }}`},{title:`Derived state`,react:`const total = useMemo(
+  () => price * quantity,
+  [price, quantity]
+)`,vue:`const total = computed(
+  () => price.value * quantity.value
+)`},{title:`Child → parent`,react:`<Editor onSave={saveUser} />`,vue:`<Editor @save="saveUser" />
+
+const emit = defineEmits<{
+  save: [user: User]
+}>()`},{title:`Content composition`,react:`<Card>{user.name}</Card>`,vue:`<BaseCard>
+  {{ user.name }}
+  <template #actions>...</template>
+</BaseCard>`}];return(s,g)=>(t(),r(`div`,l,[g[4]||=a(`header`,{class:`reference-hero`},[a(`p`,{class:`eyebrow`},`Translate, don’t restart`),a(`h1`,null,`React → Vue 3 Mental Model`),a(`p`,null,` The architecture is familiar. Vue changes how dependencies are tracked, how view syntax is expressed, and how component contracts are declared. `)],-1),a(`section`,u,[a(`table`,d,[g[0]||=a(`thead`,null,[a(`tr`,null,[a(`th`,null,`React`),a(`th`,null,`Vue 3`),a(`th`,null,`The useful difference`)])],-1),a(`tbody`,null,[(t(),r(o,null,e(m,e=>a(`tr`,{key:e[0]},[a(`td`,null,[a(`code`,null,n(e[0]),1)]),a(`td`,null,[a(`code`,null,n(e[1]),1)]),a(`td`,null,n(e[2]),1)])),64))])])]),a(`section`,f,[g[3]||=a(`div`,{class:`section-heading`},[a(`div`,null,[a(`p`,{class:`eyebrow`},`Side by side`),a(`h2`,null,`The comparisons that matter`)])],-1),(t(),r(o,null,e(h,e=>a(`article`,{key:e.title,class:`compare-example`},[a(`h3`,null,n(e.title),1),a(`div`,p,[a(`div`,null,[g[1]||=a(`span`,{class:`framework-label react-label`},`React`,-1),i(c,{code:e.react,language:`tsx`},null,8,[`code`])]),a(`div`,null,[g[2]||=a(`span`,{class:`framework-label vue-label`},`Vue`,-1),i(c,{code:e.vue},null,8,[`code`])])])])),64))]),g[5]||=a(`aside`,{class:`callout`},[a(`strong`,null,`The key shift`),a(`p`,null,` React typically reruns a component function and reconciles JSX. Vue tracks which reactive values a render or computed value reads, then schedules targeted updates. That is why dependency arrays largely disappear. `)],-1)]))}});export{m as default};
